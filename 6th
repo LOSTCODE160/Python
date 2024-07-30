@@ -1,0 +1,14 @@
+import random 
+# import urllib.request  
+import urllib3
+
+def download_web_image(url):
+ name=random.randrange(1,1000)  
+ full_name=str(name)+".jpg"
+ img = urllib3.PoolManager().request('GET', url).data
+ with open(full_name, "wb+") as binary_file:
+  binary_file.write(img)
+download_web_image("https://w0.peakpx.com/wallpaper/1005/799/HD-wallpaper-samurai-champloo-amoled`-black-champloo-samurai-swords.jpg")
+    
+
+
