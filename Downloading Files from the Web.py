@@ -1,13 +1,20 @@
-from urllib import request
-google_url='https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2023-financial-year-provisional/Download-data/annual-enterprise-survey-2023-financial-year-provisionalz-size-bands.csv'
-def company_data(csv_url):
- response=request.urlopen(csv_url)
- csv=response.read()
- csv_str=str(csv)
- csv_str = csv.decode('utf-8')
- dest_url=r'comapany.csv'
- fx=open(dest_url,"w")
- for line in lines:
-    fx.write(line + "\n")
-    fx.close()
-company_data(google_url)
+
+import requests
+from bs4 import BeautifulSoup
+def flip_spider(max_page):
+    page=1
+    while page <=max_page:
+     url='https://www.ebay.com/sch/i.html?_from=R40&_nkw=ppokemon+cards&_sacat=0&_pgn='+str(page)
+     source_code=requests.get(url)
+     plain_text=source_code.text
+     soup = BeautifulSoup(plain_text, 'html.parser')
+     for link in soup.findAll('a',{'class':'s-item__title'}):
+        div = 'https://www.ebay.com'+link.get('div')
+        print(div)
+    page+=1     
+
+flip_spider(1)        
+
+
+
+
