@@ -1,4 +1,4 @@
- #single level inheritance
+#  single level inheritance
 class parent():
     def  last_name(self):
         print("kun")
@@ -12,7 +12,7 @@ a=child()
 a.first_name()
 a.last_name()
 
-#multiple inheritance
+# multiple inheritance
 class father():
     def father_name(self):
         print("ram")
@@ -27,20 +27,19 @@ a.child_name()
 a.father_name()
 a.mother_name()
 
-
 # Multilevel inheritance
 class Grandfather:
     def __init__(self, grandfather_name):
         self.grandfather_name = grandfather_name
 
 class Father(Grandfather):
-    def __init__(self, grandfather_name, father_name):
-        Grandfather.__init__(self, grandfather_name)
+    def __init__(self, father_name):
+       # Grandfather.__init__(self, grandfather_name)
         self.father_name = father_name
 
 class Son(Father):
-    def __init__(self, grandfather_name, father_name, son_name):
-        Father.__init__(self, grandfather_name, father_name)
+    def __init__(self, son_name):
+       # Father.__init__(self, grandfather_name, father_name)
         self.son_name = son_name
 
     def print_names(self):
@@ -48,9 +47,25 @@ class Son(Father):
         print("Father name:", self.father_name)
         print("Son name:", self.son_name)
 
-# Create an instance of Son
 s1 = Son('Lal mani', 'Rampal', 'Prince')
 s1.print_names()
+ 
+#hierarchical 
+class father_name:
+    def fathername(self):
+        print("ram")
+class son1_name(father_name):
+    def sonname(self):
+        print("sam")
+class son2_name(father_name):
+    def son2name(self):
+        print("rom")
+a=son1_name()
+b=son2_name()
+a.fathername()
+a.sonname()
+ 
+
 
 
 

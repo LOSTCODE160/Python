@@ -1,4 +1,2 @@
-l.parser')
-    # #  for link in soup.findAll('a',{'class':'s-item__title'}):
-    # #     div = 'https://www.ebay.com'+link.get('div')
-    # #     print(div)
+on(root, text="Test Button", command=send_request)
+send_button.pack(pady=30)
