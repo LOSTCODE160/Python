@@ -47,8 +47,8 @@ class Son(Father):
         print("Father name:", self.father_name)
         print("Son name:", self.son_name)
 
-s1 = Son('Lal mani', 'Rampal', 'Prince')
-s1.print_names()
+s1=son()
+
  
 #hierarchical 
 class father_name:
